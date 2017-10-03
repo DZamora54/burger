@@ -12,11 +12,11 @@ router.get("/", function(req, res) {
     res.render("index", hbsObject);
   });
 });
-router.post("/", function(req, res) {
+router.post("/burgers", function(req, res) {
   burger.insertOne([
     "burger_name"
   ], [
-    req.body.name, req.body.burger_name
+    req.body.burger_name
   ], function(data) {
     res.redirect("/");
   });
